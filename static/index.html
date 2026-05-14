@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color the boxes</title>
+    <style>
+        *{
+            font-size: large;
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            padding: 10px;
+            position: relative;
+            display: grid;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            row-gap: 15px;
+            column-gap: 15px;
+
+             grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+        }
+
+        .box {
+           
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="first">Box</div>
+        <div class="box" id="sec">Box</div>
+        <div class="box" id="thi">Box</div>
+        <div class="box" id="for">Box</div>
+        <div class="box" id="fiv">Box</div>
+        <div class="box" id="six">Box</div>
+        <div class="box" id="sev">Box</div>
+        <div class="box" id="eig">Box</div>
+        <div class="box" id="nin">Box</div>
+        <div class="box" id="ten">Box</div>
+        <div class="box" id="ele">Box</div>
+        <div class="box" id="twe">Box</div>
+        <div class="box" id="thir">Box</div>
+        <div class="box" id="fort">Box</div>
+        <div class="box" id="fift">Box</div>
+    </div>
+    <script>
+
+        const dict = new Map();
+
+        // Add key-value pairs
+        dict.set(1, "first");
+        dict.set(2, "sec");
+        dict.set(3, "thi");
+        dict.set(4, "for");
+        dict.set(5, "fiv");
+        dict.set(6, "six");
+        dict.set(7, "sev");
+        dict.set(8, "eig");
+        dict.set(9, "nin");
+        dict.set(10, "ten");
+        dict.set(11, "ele");
+        dict.set(12, "twe");
+        dict.set(13, "thir");
+        dict.set(14, "fort");
+        dict.set(15, "fift");
+
+        let colors = ['#00008B','#0000FF','#1E90FF','#87CEEB','#00BFFF','#FF0000','#DC143C','#B22222','#FF6347','#FA8072','#008000','#90EE90','#32CD32','#228B22','#00FA9A','#FFFF00','#FFD700','#EEE8AA','#F0E68C','#FFA500','#FF00FF','#BA55D3','#800080','#DA70D6','#FF69B4','#00FFFF','#40E0D0','#20B2AA','#48D1CC','#F5F5DC','#D3D3D3','#A9A9A9','#FFFFFF','#000000','#7FFF00','#FF1493','#00FF7F','#8A2BE2','#FF4500','#ADFF2F','#00CED1','#C71585','#FF8C00','#6A5ACD'];
+        for (let i = 1; i < 16; i++) {
+
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const colorstring = colors[randomIndex];
+
+            const randomIndex2 = Math.floor(Math.random() * colors.length);
+            const colortext = colors[randomIndex2];
+
+            let final = "#" + dict.get(i);
+
+            const element1 = document.querySelector(final);
+
+
+
+            element1.style.backgroundColor = colorstring
+            element1.style.color = colortext
+        }
+    </script>
+</body>
+
+</html>
